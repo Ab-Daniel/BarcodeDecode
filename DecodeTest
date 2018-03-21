@@ -1,0 +1,20 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class DecodeTest
+{
+	public static void main(String[] args) throws FileNotFoundException
+	{
+		FileReader reader = new FileReader("Barcode.dat");
+		file = new Scanner(reader);
+		while (file.hasNext())	
+		{
+			String barcode = file.nextLine();
+			String zipcode = DecodeBarcode.decode(barcode);
+			System.out.println("Barcode: " + barcode);		
+			System.out.println(zipcode);
+		}
+	}
+	private static Scanner file;
+}
